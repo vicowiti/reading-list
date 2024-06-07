@@ -9,7 +9,7 @@ interface Props {
 
 const BookListing = (props: Props) => {
 
-    console.log("from listing", props.books);
+  
 
 
     return (

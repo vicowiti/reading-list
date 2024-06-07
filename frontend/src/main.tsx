@@ -7,18 +7,18 @@ import theme from './theme/index.ts'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home';
 import Favorites from './pages/Favorites.tsx'
-import NavBar from './components/NavBar.tsx'
 import { Toaster } from 'sonner'
+import Layout from './components/Layout.tsx'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout><Home /></Layout>,
   },
   {
     path: "/favorites",
-    element: <Favorites />,
+    element: <Layout><Favorites /></Layout>
   },
 ]);
 
@@ -29,10 +29,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <NavBar />
       <Container >
         <Toaster richColors />
-
         <RouterProvider router={router} />
       </Container>
     </ThemeProvider>

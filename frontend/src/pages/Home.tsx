@@ -14,7 +14,7 @@ const Home = () => {
         async function fetchData() {
             try {
                 const results = await fetchBooks()
-                console.log(results);
+
                 setBooks(results)
             } catch (err) {
                 toast.error("Could not fetch books!")
