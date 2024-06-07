@@ -16,7 +16,8 @@ cd frontend && npm ci
 npm run dev
 ```
 
-The project starts on http://localhost:5173
+- The project starts on http://localhost:5173
+- The live link is https://graceful-tanuki-568d6b.netlify.app
 
 ### Data
 
