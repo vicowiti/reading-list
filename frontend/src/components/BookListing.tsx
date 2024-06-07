@@ -13,9 +13,7 @@ const BookListing = (props: Props) => {
 
 
     return (
-        <Grid columns={{
-            l
-        }}>
+        <Grid gap={2} justifyContent={"center"} container style={{ width: '100%', margin: 0 }}>
             {props.books.map((book, index) => <BookCard key={index} book={book} />)}
         </Grid>
     )

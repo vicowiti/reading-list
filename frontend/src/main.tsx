@@ -29,9 +29,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <NavBar />
       <Container >
         <Toaster richColors />
-        <NavBar />
+
         <RouterProvider router={router} />
       </Container>
     </ThemeProvider>

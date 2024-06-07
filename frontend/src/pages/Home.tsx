@@ -9,6 +9,7 @@ import { toast } from "sonner"
 
 const Home = () => {
     const [books, setBooks] = useState<Book[]>([])
+    const [search, setSearch] = useState("")
     useEffect(() => {
         async function fetchData() {
             try {
@@ -24,12 +25,17 @@ const Home = () => {
 
         fetchData()
     })
-    return (
-        <Stack>
-            <SearchBar />
 
-            <Stack>
-                {books?.length > 0 ? <BookListing books={books} /> : <Typography textAlign={`center`}>No books here yet!</Typography>}
+    const filteredBooks = books.filter(book => book.title.toLowerCase().includes(search.toLowerCase()))
+    return (
+        <Stack gap={3}>
+            <Stack display={`flex`} justifyContent={"center"} alignItems={"center"}>
+                <SearchBar search={search} setSearch={setSearch} />
+            </Stack>
+
+
+            <Stack style={{ width: "100%" }}>
+                {filteredBooks?.length > 0 ? <BookListing books={filteredBooks} /> : <Typography mt={5} color={"#777"} fontWeight={"700"} textAlign={`center`}>No books here yet! Refine Search</Typography>}
             </Stack>
 
 
