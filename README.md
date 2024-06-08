@@ -2,6 +2,10 @@
 
 # Ello Fullstack Engineering Challenge
 
+### Mockup
+
+![mockup](./frontend/src/assets/mockup.png)
+
 ### Running the frontend
 
 - In a unix terminal: Run
